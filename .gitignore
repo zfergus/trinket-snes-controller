@@ -17,6 +17,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Work files
+Adafruit-Trinket-USB-master
+Adafruit-Trinket-USB-master.zip
+nes_snes_db9_usb-1.9.tar.gz
+
 # =========================
 # Operating System Files
 # =========================
