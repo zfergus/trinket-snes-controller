@@ -16,7 +16,7 @@ Board: `Adafruit Trinket 16MHz`
 Programmer: `USBtinyISP`
 
 ### Note
-There will be a couple warnings, but they do not effect functionality. The code
+There will be a couple warnings, but they do not affect functionality. The code
 should compile if the environment is set up correctly.
 
 Example compilation ([path\to] is a system specific path):
