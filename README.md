@@ -1,6 +1,6 @@
 # Trinket SNES Controller
 
-<center><img src="snes-controller.png"></center>
+<p align="center"><img src="snes-controller.png"></p>
 
 Script for Adafruit's Trinket that reads in the input from and SNES controller
 and outputs keystrokes.
