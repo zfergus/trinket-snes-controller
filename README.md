@@ -1,25 +1,54 @@
 # Trinket SNES Controller
 
-<p align="center"><img src="snes-controller.png"></p>
+<p align="center" width="50%"><img src="img/logo.svg"></p>
 
-Script for Adafruit's Trinket that reads in the input from and SNES controller
-and outputs keystrokes.
+Sketch for Adafruit's Trinket that reads in the input from an SNES controller
+and outputs keystrokes over USB.
 
 ## Usage
-This code is designed for a Trinket 5V. Follow these steps to setup Adafruit 
-products to work with the Arduino IDE: [https://learn.adafruit.com/adafruit-arduino-ide-setup/overview](https://learn.adafruit.com/adafruit-arduino-ide-setup/overview). 
-Set the board to `Adafruit Trinket 16MHz`, and set the programmer to 
-`USBtinyISP`. Learn more at [https://learn.adafruit.com/introducing-trinket/setting-up-with-arduino-ide](https://learn.adafruit.com/introducing-trinket/setting-up-with-arduino-ide).
 
-### Quick Reference
+This code is designed for Adafruit's Trinket 5V. Instructions for setting up the Trinket in the Arduino IDE can be found [here](https://learn.adafruit.com/adafruit-arduino-ide-setup/overview). For the Trinket, set the board to `Adafruit Trinket 16MHz` and the programmer to
+`USBtinyISP` in the Arduino IDE. Learn more about about the Trinket [here](https://learn.adafruit.com/introducing-trinket/setting-up-with-arduino-ide).
 
-Board: `Adafruit Trinket 16MHz`
+## Contents
 
-Programmer: `USBtinyISP`
+* `TrinketSNESController/TrinketSNESController.ino`: The Arduino sketch for the
+Trinket to interface with the SNES controller and press keys using the
+`TrinketKeyboard` library.
+* `docs/the-nes-controller-handler.pdf`: A description of how the NES controller
+communicates button presses with the NES. The same principle holds for the SNES
+controller except that the SNES controller includes signals for the
+`X`, `Y`, `L`, and `R` buttons. The order of the button signals can be found in
+the sketch. *Note: This document is a saved version of Tresi Arvizo website
+which is no longer available.*
 
-### Note
-There will be a couple warnings, but they do not affect functionality. The code
-should compile if the environment is set up correctly.
+## Wiring
+
+<p align="center"><img src="img/snes-trinket.png"></p>
+
+For ease of wiring, I chose to cut the original controller's wire and connect
+them to the Trinket. This also avoids damaging the PCB of the controller, a sin
+a lot of other methods commit.
+
+<p align="center"><img src="img/close-up.png"></p>
+
+The above image shows how I wired the SNES controller to the Trinket.
+The wiring is
+
+* white wire (power) → 5V pin
+* orange wire (latch) → GPIO pin 0
+* red wire (pulse) → GPIO pin 1
+* yellow wire (data) → GPIO pin 2
+* brown wire (ground) → ground pin.
+
+The Trinket can then be programmed and connected to the computer using a
+USB cable.
+
+## Common Compilation Warnings
+
+When compiling the sketch, I encountered a couple warnings, but they did not
+affect functionality. The code should compile if the environment is set up
+correctly.
 
 Example compilation ([path\to] is a system specific path):
 ```
@@ -38,13 +67,3 @@ In file included from [path\to]\appdata\roaming\arduino15\packages\arduino\tools
 Sketch uses 3,974 bytes (74%) of program storage space. Maximum is 5,310 bytes.
 Global variables use 106 bytes of dynamic memory.
 ```
-
-## Contents
-* The NES Controller Handeler.pdf - Specifies how to interface with a 
-NES/SNES controller
-* TrinketSNESController.ino - Arduino sketch for the trinket to interface as a
-SNES controller.
-
-## Includes
-This code is based on the Adafruit code base for the Trinket. 
-This code is designed for a Trinket 5V.
