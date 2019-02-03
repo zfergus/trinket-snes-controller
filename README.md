@@ -1,6 +1,6 @@
 # Trinket SNES Controller
 
-<p align="center" width="50%"><img src="img/logo.svg"></p>
+<p align="center"><img src="img/logo.svg" width="400px"></p>
 
 Sketch for Adafruit's Trinket that reads in the input from an SNES controller
 and outputs keystrokes over USB.
@@ -30,7 +30,7 @@ For ease of wiring, I chose to cut the original controller's wire and connect
 them to the Trinket. This also avoids damaging the PCB of the controller, a sin
 a lot of other methods commit.
 
-<p align="center"><img src="img/close-up.png"></p>
+<p align="center"><img src="img/close-up.png" width="80%"></p>
 
 The above image shows how I wired the SNES controller to the Trinket.
 The wiring is
